@@ -12,8 +12,7 @@ Welcome to the **Student Performance Predictor** project! This repository contai
 * [Prediction Pipeline](#prediction-pipeline)
 * [User Interface](#user-interface)
 * [Deployment](#deployment)
-* [Contributing](#contributing)
-* [License](#license)
+* [⭐️ Show Your Support](#⭐️ShowYourSupport)
 * [Contact](#contact)
 
 ## Project Overview
