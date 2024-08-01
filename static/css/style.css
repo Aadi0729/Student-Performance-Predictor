@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10%;
+    border-bottom: 1px solid #000;
+    z-index: 10;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+nav .logo{
+    width: 220px;
+    cursor: pointer;
+    margin-top: -9px;
+}
+
+.nav-btn{
+    background: #000;
+    color: #fff;
+    font-size:16px;
+    padding: 11px 25px;
+    border: 0;
+    outline: 0;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-btn img{
+    width: 16px;
+    margin-left: 8px;
+}
+
+/* Hover effect */
+.nav-btn:hover {
+    background: #A52A2A; /* Change the background color on hover */
+    transform: scale(1.005); /* Slightly scale up the button */
+}
+
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(#eefff9 0%, #ffccc1 49%, #dcdbff 100%);
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header h1{
+    margin-top: 100px;
+    font-size: 11vw;
+    line-height: 9vw;
+}
+
+.btn-container{
+    margin: 20px 0;
+}
+.header button {
+    border: 0;
+    outline: 0;
+    display:inline-flex;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Existing styles */
+.btn-dark {
+    background: #000;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    border-radius: 40px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transition for smooth effect */
+}
+
+.btn-dark img {
+    width: 40px;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 30px;
+}
+
+.btn-dark:hover {
+    background-color: #333; /* Darker background on hover */
+    transform: scale(1.005); /* Slightly enlarge the button on hover */
+}
+
+.btn-dark:active {
+    background-color: #fff; /* Background color when button is clicked */
+    color: #000; /* Text color to ensure readability */
+    border: 2px solid #000; /* Optional: Border color to match text color */
+}
+
+/* New contact button styles */
+.contact-btn button {
+    background: #281678;
+    color: #fff4d9;
+    padding: 6px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transition for smooth effect */
+}
+
+.contact-btn button img {
+    width: 38px; /* Adjust icon size */
+    margin-left: 10px;
+}
+
+.contact-btn button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.005); /* Slightly enlarge the button on hover */
+}
+
+.contact-btn button:active {
+    background-color: #fff; /* Background color when button is clicked */
+    color: #28a745; /* Text color to ensure readability */
+    border: 2px solid #28a745; /* Optional: Border color to match text color */
+}
+
+
+.btn-light{
+    background: transparent;
+    text-decoration: underline;
+}
+
+.btn-light img{
+    width: 20px;
+    margin-left: 10px;
+}
+
+.header p{
+    max-width: 580px;
+    font-weight: 500;
+}
+
+
+
+.siteBanner-img{
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    right: 6%;
+    bottom: 0;
+    top: 1;   
+    filter: brightness(1) contrast(1.1) saturate(1.15);
+}
+
+
+
+/* --------------animation---------------- */
+.header h1 span{
+    background: linear-gradient(#000, #000);
+    background-repeat: no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-size: 0;
+}
+
+.header h1 span:first-child{
+    animation: textcolor1 2s linear infinite alternate;
+}
+.header h1 span:last-child{
+    animation: textcolor2 2s linear infinite alternate;
+}
+@keyframes textcolor1 {
+    0%{
+        background-size: 0%;
+    }
+    40%{
+        background-size: 100%;
+    }
+    100%{
+        background-size: 100%;
+    }
+}
+@keyframes textcolor2 {
+    0%{
+        background-size: 0%;
+    }
+    40%{
+        background-size: 0%;
+    }
+    100%{
+        background-size: 100%;
+    }
+}
+
+.menu-icon {
+    display: none;
+}
+
+/* ------------------Media queries for navbar--------------------------------- */
+@media only screen and (max-width: 600px) {
+    nav ul {
+        position : absolute;
+        width : 100%;
+        background : #000;
+        color : #fff;
+        left : 0;
+        top: 100%;
+        text-align : center;
+        max-height: 0;
+        overflow : hidden;
+        transition : max-height 0.5s;
+    }
+    .nav-btn {
+        display : none;
+    }
+    nav .logo{
+        width: 150px;
+    }
+    nav ul li {
+        margin: 10px;
+        font-size: 14px;
+    }
+    .menu-icon{
+        display: block;
+        width: 30px;
+    }
+    .show-menu{
+        max-height: 60px;
+    }
+}
+
+/* -----------------Media Queries for Header Content-------------------- */
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 100vh; /* Full height of the viewport */
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+    }
+    .siteBanner-img {
+        width: 100%;
+        height: 100%; /* Cover the full height */
+        position: absolute; /* Absolute positioning to cover the header */
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
+        filter: brightness(0.8); /* Slightly darken the background image for better text contrast */
+    }
+    .header-content {
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3; /* Ensure text is above the image */
+        width: 80%;
+        padding: 10px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.8); /* White background with slight transparency */
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+    .btn-container {
+        margin: 10px 0;
+    }
+    .header button {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .btn-dark {
+        padding: 7px 20px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn-dark img {
+        width: 20px; /* Adjusted size for better balance */
+        padding: 5px;
+        margin-left: 10px;
+    }
+    .btn-light {
+        display: block;
+        margin-top: 10px;
+        color: #000;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .header h1 {
+        font-size: 30px; /* Adjusted font size for mobile readability */
+        line-height: 30px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: #000; /* Ensure the text is clearly visible */
+    }
+    .header p {
+        font-size: 16px; /* Ensuring the paragraph text is also mobile-friendly */
+        color: #000; /* Ensure the text is clearly visible */
+        margin-top: 10px;
+    }
+    .navbar {
+        z-index: 4; /* Ensure the navbar is above everything else */
+    }
+}
+
+.prediction-results {
+    margin-top: 1rem; /* mt-4 */
+    padding: 0.75rem; /* p-3 */
+    background-color: #f0f0f0; /* bg-light */
+    border-radius: 0.5rem; /* rounded */
+}
+
+.prediction-results h2 {
+    font-size: 1.5rem; /* Adjust font size for heading */
+    margin-bottom: 0.5rem; /* Optional: Adjust spacing */
+}
+
+.prediction-results p {
+    font-size: 1rem; /* Adjust font size for paragraph */
+    /* Additional styles for paragraph if needed */
+}
+
+
+

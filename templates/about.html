@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            background-color: #f4f7f6; /* Light background color for the entire page */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header-section {
+            background: linear-gradient(to right, #0066cc, #0099ff); /* Gradient background */
+            color: white;
+            text-align: center;
+            padding: 60px 0; /* Adjusted padding for better spacing */
+            position: relative;
+        }
+        .header-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .header-section img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-width: 40%;
+            height: auto;
+            z-index: 1; /* Ensure image stays above other content */
+        }
+        .header-section .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            z-index: 2; /* Ensure it stays above other content */
+        }
+        .content-section {
+            background-color: #ffffff; /* White background for content */
+            border-radius: 10px; /* Rounded corners */
+            padding: 50px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a lifted effect */
+            margin: 0 auto;
+            max-width: 900px; /* Constrain the width for larger screens */
+            margin-top: -50px; /* Pull content up to overlap header */
+            position: relative;
+            z-index: 2; /* Ensure content stays above header image */
+        }
+        .content-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #17a2b8;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .header-section {
+                padding: 50px 0;
+            }
+            .header-section h1 {
+                font-size: 2rem;
+            }
+            .header-section img {
+                max-width: 50%;
+            }
+            .header-section .back-arrow {
+                font-size: 1.2rem;
+            }
+            .content-section {
+                padding: 30px 10px;
+            }
+            .content-section p {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .header-section h1 {
+                font-size: 1.5rem;
+            }
+            .header-section img {
+                max-width: 100%;
+                position: static;
+                margin-top: 20px;
+            }
+            .header-section .back-arrow {
+                font-size: 1rem;
+            }
+            .content-section {
+                padding: 20px 10px;
+                margin-top: 0; /* Remove margin-top on smaller screens */
+            }
+            .content-section p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-section">
+        <a href="{{ url_for('index') }}" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+        <div class="container">
+            <h1>About the Project</h1>
+        </div>
+    </header>
+
+    <div class="container content-section">
+        <h2>Mission</h2>
+        <p>
+            Welcome to the <span class="highlight">Student Performance Predictor</span> application! This app is designed to help educators, parents, and students predict academic performance based on various parameters such as gender, race/ethnicity, parental level of education, lunch type, and test preparation course.
+        </p>
+        <h2>Goal</h2>
+        <p>
+            My goal is to provide insights into student performance, enabling informed decisions to enhance educational outcomes. By leveraging data science and machine learning techniques, I aim to identify patterns and correlations that can help improve student success.
+        </p>
+        <h2>About Me</h2>
+        <p>
+            This project was developed by <span class="highlight">Aditya Pateriya</span> as part of an effort to bring data-driven decision-making to the educational sector. I believe that by understanding the factors influencing student performance, I can create a more effective and supportive learning environment.
+        </p>
+        <h2>Contact Me</h2>
+        <p>
+            Thank you for using my application! If you have any questions or feedback, please feel free to reach out to me at <a href="mailto:adityapateriya7986@gmail.com">adityapateriya7986@gmail.com</a>.
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

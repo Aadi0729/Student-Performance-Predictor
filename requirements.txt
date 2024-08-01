@@ -8,4 +8,5 @@ xgboost
 dill
 Flask
 gunicorn
+smtplib
 # -e .

@@ -1,1 +1,68 @@
-<h1>Welcome to the Prediction Site</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='images/Image1.png') }}" alt="" class="logo">
+        <ul id="menu-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/howitworks">How it works</a></li>
+            <li><a href="/predictdata">Predict Data</a></li>
+        </ul>
+        <a href="/predictdata">
+            <button class="nav-btn"> 
+                Get Started 
+                <img src="{{ url_for('static', filename='images/arrow-white.png') }}" alt="">
+            </button>
+        </a>
+        <img src="{{ url_for('static', filename='images/menu.png') }}" alt="" class="menu-icon" onclick="toogleMenu()">
+    </nav>
+
+    <div class="header">
+        <div class="header-content">
+            <h1><span>DATA</span><br><span>INSIGHTS</span></h1>
+            <div class="btn-container">
+                <a href="https://github.com/Aadi0729/ML-Projects" target="_blank">
+                    <button class="btn-dark">Explore the code 
+                        <img src="{{ url_for('static', filename='images/github.png') }}" alt="">
+                    </button>
+                </a>
+                <a href="mailto:adityapateriya7986@gmail.com?subject=Contact%20Form%20Submission&body=Hello%2C%20I%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding%20this%20project." class="contact-btn">
+                    <button class="btn-dark">Contact Me
+                        <img src="{{ url_for('static', filename='images/contact.png') }}" alt="">
+                    </button>
+                </a>
+            </div>
+            <p>Predicts student performance based on various parameters</p>
+        </div>
+    </div>
+    <img src="{{ url_for('static', filename='images/bannerHome.png') }}" alt="" class="siteBanner-img">
+
+    <script>
+        let navbar = document.querySelector('nav');
+        let menuLinks = document.getElementById("menu-links");
+
+        function toogleMenu(){
+            menuLinks.classList.toggle('show-menu');
+        }
+
+        window.onscroll = function(){
+            if(window.scrollY > 0){
+                navbar.style.background = "#eefff9";
+            }
+            else{
+                navbar.style.background = "transparent";
+            }
+        }
+    </script>
+</body>
+</html>

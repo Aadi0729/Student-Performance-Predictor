@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Data Now</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome -->
+    <style>
+        body {
+            background-color: #c7bfbf; /* Light grey color */
+        }
+        .header-banner {
+            background: #007bff; /* Blue color */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .back-arrow {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            z-index: 2; /* Ensure it stays above other content */
+        }
+        .content-section {
+            padding: 50px 0;
+        }
+        .form-control, .form-control:focus {
+            border-color: #007bff; /* Blue color */
+            box-shadow: none;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-dark {
+            background-color: #343a40;
+            color: #ffffff;
+            border: none;
+        }
+        .btn-dark img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+        @media (max-width: 768px) {
+            .header-banner h1 {
+                font-size: 2rem;
+            }
+            .content-section {
+                padding: 30px 10px;
+            }
+        }
+        @media (max-width: 576px) {
+            .header-banner h1 {
+                font-size: 1.5rem;
+            }
+            .content-section {
+                padding: 20px 10px;
+            }
+            .back-arrow {
+                font-size: 1rem;
+            }
+        }
+        .prediction-results {
+            margin-top: 1rem; /* mt-4 */
+            padding: 0.75rem; /* p-3 */
+            background-color: #f0f0f0; /* bg-light */
+            border-radius: 0.5rem; /* rounded */
+        }
+        .prediction-results h2 {
+            font-size: 1.5rem; /* Adjust font size for heading */
+            margin-bottom: 0.5rem; /* Optional: Adjust spacing */
+        }
+        .prediction-results p {
+            font-size: 1rem; /* Adjust font size for paragraph */
+            /* Additional styles for paragraph if needed */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-banner">
+        <a href="{{ url_for('index') }}" class="back-arrow"><i class="fas fa-arrow-left"></i></a>
+        <div class="container">
+            <h1>Predict Data Now</h1>
+        </div>
+    </header>
+
+    <div class="container content-section">
+        <form action="{{ url_for('predict_datapoint') }}" method="post" class="bg-light p-4 rounded">
+            <h2><legend>Performance Prediction Form</legend></h2>
+            
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="gender" required>
+                    <option value="" selected disabled>Select your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Race or Ethnicity</label>
+                <select class="form-control" name="ethnicity" required>
+                    <option value="" selected disabled>Select Ethnicity</option>
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group E">Group E</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Parental Level of Education</label>
+                <select class="form-control" name="parental_level_of_education" required>
+                    <option value="" selected disabled>Select Parent Education</option>
+                    <option value="associate's degree">Associate's Degree</option>
+                    <option value="bachelor's degree">Bachelor's Degree</option>
+                    <option value="high school">High School</option>
+                    <option value="master's degree">Master's Degree</option>
+                    <option value="some college">Some College</option>
+                    <option value="some high school">Some High School</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Lunch Type</label>
+                <select class="form-control" name="lunch" required>
+                    <option value="" selected disabled>Select Lunch Type</option>
+                    <option value="free/reduced">Free/Reduced</option>
+                    <option value="standard">Standard</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Test Preparation Course</label>
+                <select class="form-control" name="test_preparation_course" required>
+                    <option value="" selected disabled>Select Test Course</option>
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="writing_score">Writing Score out of 100</label>
+                <input type="number" id="writing_score" name="writing_score" class="form-control" placeholder="Enter your Writing Score" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="reading_score">Reading Score out of 100</label>
+                <input type="number" id="reading_score" name="reading_score" class="form-control" placeholder="Enter your Reading Score" required>
+            </div>
+            
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict Your Score" />
+            </div>
+        </form>
+
+        {% if results %}
+        <div class="prediction-results">
+            <h2>Prediction Results</h2>
+            <p>{{ results }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

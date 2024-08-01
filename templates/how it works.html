@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Include Font Awesome -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .header-banner {
+            background: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            font-size: 1.25rem;
+            color: white;
+            text-decoration: none;
+        }
+        .content-section {
+            padding: 50px 0;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .header-banner h1 {
+                font-size: 2rem;
+            }
+            .content-section {
+                padding: 30px 10px;
+            }
+        }
+        @media (max-width: 576px) {
+            .header-banner h1 {
+                font-size: 1.5rem;
+            }
+            .content-section {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-banner">
+        <a href="{{ url_for('index') }}" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <div class="container">
+            <h1>How It Works</h1>
+        </div>
+    </header>
+
+    <div class="container content-section">
+        <h2>Introduction</h2>
+        <p>
+            The Student Performance Prediction project aims to predict students' academic performance based on various parameters. This machine learning project is designed to help educators, administrators, and policymakers make informed decisions to improve student outcomes. The application uses a machine learning model to analyze input data and provide predictions on student performance.
+        </p>
+
+        <h2>Features</h2>
+        <p>
+            - User-friendly interface for data input.<br>
+            - Predicts student performance based on gender, race/ethnicity, parental education level, lunch type, test preparation course, and scores in writing and reading.<br>
+            - Displays prediction results in a clear and concise manner.
+        </p>
+
+        <a>
+            <h2> -> Implementation <-</h2>
+        </a>
+
+        <h3>Predict Data</h3>
+        <p>
+            The predict data page contains a form where users can input various details required for prediction. The form fields include:
+        </p>
+        <ul>
+            <li>Gender</li>
+            <li>Race or Ethnicity</li>
+            <li>Parental Level of Education</li>
+            <li>Lunch Type</li>
+            <li>Test Preparation Course</li>
+            <li>Writing Score</li>
+            <li>Reading Score</li>
+        </ul>
+        <p>
+            Upon form submission, the data is sent to the server for prediction.
+        </p>
+
+        <h3>Server-side Processing</h3>
+        <p>
+            The Flask application handles the form submission and processes the data. The data from the form is collected and transformed into a format suitable for the prediction pipeline. The <code>CustomData</code> class is used to structure the input data. The <code>PredictPipeline</code> class is used to load the trained machine learning model and make predictions. The prediction results are returned and rendered on the predict data page.
+        </p>
+
+        <h3>Prediction Pipeline</h3>
+        <p>
+            The prediction pipeline includes the following stages:
+        </p>
+        <ul>
+            <li><strong>Data Ingestion:</strong> Collects and processes the input data from the form.</li>
+            <li><strong>Data Transformation:</strong> Transforms the input data into a suitable format for the model.</li>
+            <li><strong>Model Prediction:</strong> Uses the trained machine learning model to predict the student's performance based on the input data.</li>
+        </ul>
+
+        <h3>Displaying Results</h3>
+        <p>
+            The prediction results are displayed on the predict data page below the form after submission. 
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
