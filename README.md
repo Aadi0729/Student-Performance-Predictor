@@ -2,7 +2,7 @@
 
 Welcome to the **Student Performance Predictor** project! This repository contains the source code, documentation, and other relevant materials for the Student Performance Predictor, a machine learning project designed to analyze and predict student performance.
 
-## Table of Contents
+## Table of Contents:
 * [Project Overview](#project-overview)
 * [Features](#features)
 * [Installation](#installation)
